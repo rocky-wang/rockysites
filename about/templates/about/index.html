@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <div>About</div>
+    <p>{{ title }}</p>
+    <a href="{% url 'calc_add' 43 56 %}">43+56的结果</a>
+    {% for mv in mvs %}
+        {{ mv }}{% if forloop.counter0 >= 20 %}&{% endif %}
+    {% endfor %}
+    <div>
+    {{ request.path }}/{{ request.GET.urlencode }}
+    </div>
+{% endblock %}

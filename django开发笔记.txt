@@ -1,0 +1,38 @@
+windows开发记录：
+	--- 【使用python2.7 + Django1.8.18】
+1、在任意需要建立工程的目录下敲入cmd，利用django-admin.exe生成django框架文件
+	D:\Python27\Scripts\django-admin.exe startproject rockysites
+    此时可以利用pycharm建立工程，进行全IDE工具开发
+2、建立站点app，每个app以后可以作为其他工程的app直接使用，建议按功能分级使用
+    使用cmd窗口：
+        D:\Python27\python.exe manage.py startapp about
+    使用IDE工具建立：
+        Tools-->Run manage.py Task...
+        直接使用manage自带的命令进行操作，可以使用help查看
+3、可以维护整个站点的urls路由，也可以针对每个app进行urls路由维护；
+若每个app是单独一个目录的话，可以使用include进行维护。
+    后者一般使用的是http://127.0.0.1/admin/xxxxx，
+    将xxxxx进行单独维护
+4、可以启动服务，验证
+    使用cmd窗口：
+        D:\Python27\python.exe manage.py runserver 0.0.0.0:8000
+    也可以使用pycharm
+=====================================================================
+添加app时，不要忘记在settings里INSTALLED_APPS里进行添加名称
+知识点考核：
+1、urls路由方式，直接添加和include方法；
+2、url定义name的意义，旧url重定向新url，html模板中使用url名称的好处；
+3、templates的文件夹设计方式，html基础模板的常用变量include extends block title；
+4、url正则表达式及参数传递；
+5、templates模块的字典内容展开，循环解析；
+======================================================================
+1、数据库ORM开发方式
+2、后台数据管理
+3、读取数据库，进行HTML模板渲染
+后台提交中文问题：
+请输入代码
+from django.utils.encoding import python_2_unicode_compatible
+# Create your models here.
+@python_2_unicode_compatible
+
+

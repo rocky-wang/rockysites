@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+
+{% block title %}代办事项{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for todo in todos %}
+            <li><a href="/about/todo/{{ todo.id }}">{{ todo.title }}</a>: {{ todo.text }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

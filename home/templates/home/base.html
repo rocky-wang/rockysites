@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}首页{% endblock %}-海牛工作室</title>
+</head>
+<body>
+{% include 'home/ads.html' %}
+<h1>海牛工作室</h1>
+
+{% block content %}
+    <div style="color:red;">这是模板正文</div>
+{% endblock %}
+</body>
+</html>
